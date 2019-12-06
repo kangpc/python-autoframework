@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2.dev1 (Python 3.7.3 on win32)" generated="20190425 22:09:01.306" rpa="false">
+<suite id="s1" name="Rf App" source="E:\PycharmProjects\guest\tests\rf_test\rf_app.robot">
+<test id="s1-t1" name="case1">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>platformVersion=7.1</arg>
+<arg>deviceName=Kemi</arg>
+<arg>appPackage=com.android.calculator2</arg>
+<arg>appActivity=.Calculator</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20190425 22:09:04.200" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20190425 22:09:04.198" endtime="20190425 22:09:04.200"></status>
+</kw>
+<msg timestamp="20190425 22:09:04.201" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20190425 22:09:04.203" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 7.1. The following are available: 0123456789ABCDEF (8.1.0)
+</msg>
+<status status="FAIL" starttime="20190425 22:09:01.486" endtime="20190425 22:09:04.203"></status>
+</kw>
+<doc>Test open app</doc>
+<status status="FAIL" starttime="20190425 22:09:01.486" endtime="20190425 22:09:04.204" critical="yes">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 7.1. The following are available: 0123456789ABCDEF (8.1.0)
+</status>
+</test>
+<test id="s1-t2" name="case2">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.calculator2:id/digit_9</arg>
+</arguments>
+<msg timestamp="20190425 22:09:04.207" level="INFO">Clicking element 'com.android.calculator2:id/digit_9'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20190425 22:09:04.208" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20190425 22:09:04.207" endtime="20190425 22:09:04.208"></status>
+</kw>
+<msg timestamp="20190425 22:09:04.209" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20190425 22:09:04.211" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20190425 22:09:04.206" endtime="20190425 22:09:04.211"></status>
+</kw>
+<doc>Test addition</doc>
+<status status="FAIL" starttime="20190425 22:09:04.206" endtime="20190425 22:09:04.211" critical="yes">No application is open</status>
+</test>
+<test id="s1-t3" name="case3">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>com.android.calculator2:id/digit_8</arg>
+</arguments>
+<msg timestamp="20190425 22:09:04.214" level="INFO">Clicking element 'com.android.calculator2:id/digit_8'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20190425 22:09:04.215" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20190425 22:09:04.214" endtime="20190425 22:09:04.215"></status>
+</kw>
+<msg timestamp="20190425 22:09:04.216" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20190425 22:09:04.218" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20190425 22:09:04.213" endtime="20190425 22:09:04.218"></status>
+</kw>
+<doc>Test subtraction</doc>
+<status status="FAIL" starttime="20190425 22:09:04.212" endtime="20190425 22:09:04.218" critical="yes">No application is open</status>
+</test>
+<test id="s1-t4" name="case4">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>accessibility_id=More options</arg>
+</arguments>
+<msg timestamp="20190425 22:09:04.221" level="INFO">Clicking element 'accessibility_id=More options'.</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20190425 22:09:04.223" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20190425 22:09:04.222" endtime="20190425 22:09:04.223"></status>
+</kw>
+<msg timestamp="20190425 22:09:04.223" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20190425 22:09:04.225" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20190425 22:09:04.221" endtime="20190425 22:09:04.225"></status>
+</kw>
+<doc>Test close app</doc>
+<status status="FAIL" starttime="20190425 22:09:04.220" endtime="20190425 22:09:04.225" critical="yes">No application is open</status>
+</test>
+<status status="FAIL" starttime="20190425 22:09:01.308" endtime="20190425 22:09:04.226"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4">Critical Tests</stat>
+<stat pass="0" fail="4">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="4" id="s1" name="Rf App">Rf App</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20190425 22:09:04.201" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20190425 22:09:04.209" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20190425 22:09:04.216" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20190425 22:09:04.223" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

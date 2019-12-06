@@ -1,0 +1,12 @@
+1520088571318	geckodriver	INFO	geckodriver 0.19.1
+1520088571328	geckodriver	INFO	Listening on 127.0.0.1:1999
+1520088573381	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\WUXIAO~1\\AppData\\Local\\Temp\\rust_mozprofile.Cpw1FL3G1Kkj"
+er::marionette	INFO	Connecting to Marionette on localhost:61827
+1488211168062	Marionette	INFO	Listening on port 61827
+JavaScript warning: https://web.yixin.im/m/r/core.js?7d338c1ef698e862cb58052c87490266, line 117: unreachable code after return statement
+JavaScript warning: http://s3.music.126.net/sep/s/2/core.js?8f37c989657c929684455a1d13688450, line 89: unreachable code after return statement
+JavaScript warning: http://s3.music.126.net/sep/s/2/pt_musicbox_mailplayer.js?2237262fdde2735790662b50f465b606, line 11: unreachable code after return statement
+JavaScript warning: http://s3.music.126.net/sep/s/2/pt_musicbox_mailplayer.js?2237262fdde2735790662b50f465b606, line 11: unreachable code after return statement
+[Child 11348] WARNING: pipe error: 232: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 513
+[Child 11348] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2056
+

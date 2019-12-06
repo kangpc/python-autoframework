@@ -1,0 +1,58 @@
+﻿# coding:utf-8
+action:封装关键字
+config:所有的配置和工程变量
+exceptionpictures:异常情况截屏的目录
+log：放日志的
+testData:放excel的测试用例
+testScript:放的是框架代码
+util:工程中用到的各种封装的包
+
+
+框架工作的伪代码：
+1 加载(loadWorkBook)testData下的测试数据excel文件，
+名称为excelObj
+2 读“测试用例”sheet,存到caseSheet变量
+3 通过caseSheet变量，读取“是否执行”列，将列对象存到
+一个变量isExecuteColumn
+4 遍历“是否执行”列的所有值，当值不是y/Y的时候，
+调用writeTestResult函数，写入当前行的测试结果列为""，
+写入当前行的测试时间列""
+当值是是y/Y的时候，开始非常复杂的逻辑：
+从调用框架类型列读取框架使用的类型，
+存到变量useFrameWorkName，框架类型只会有2种：
+1 数据：实质为混合驱动的执行，会调用CreateContacts.py
+中的dataDriverFun函数，函数需要两个值：
+   1）数据sheet对象---在此例子中，sheet名为：联系人
+   2）测试步骤执行sheet对象---在此例子中，sheet名为：
+      创建联系人
+2 关键字：实质为关键字驱动的执行，读取测试步骤执行的sheet对象
+          进行关键字的测试步骤。
+          此例子，有2个关键字执行步骤的sheet名：
+          1）登录
+          2）发邮件
+
+基于关键字框架模式执行的时候，怎么判断测试用例是否执行成功：
+所有的测试步骤执行时候，判断是成功，并累加存到一个
+变量中，变量名为：successfulSteps,执行完毕后
+使用测试步骤总数和successfulSteps去比对，如果一致
+认为所有测试步骤成功，即测试用例成功。
+   
+基于数据框架模式（实际上是混合模式）执行（实际调用dataDriverFun执行的）的时候，
+怎么判断测试用例是否执行成功：
+所有的测试步骤执行时候，判断是成功，并累加存到一个
+变量中，变量名为：successStep,执行完毕后
+使用测试步骤总数和successStep去比对，如果一致
+认为所有测试步骤成功，即当前测试数据添加成功，会将
+successDatas进行加1操作。
+如果所有需要执行的测试数据数量（统计是否执行列的y的行数）和successDatas一致，
+认为测试用例成功，否则失败，写入excel的“测试用例”sheet
+的测试结束时间列和执行结果列。
+
+
+
+
+
+
+
+
+

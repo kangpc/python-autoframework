@@ -1,0 +1,96 @@
+<html lang="zh-CN">
+  <head>
+      {% load bootstrap3 %}
+      {% bootstrap_css %}
+      {% block content %}
+      <!--{% bootstrap_javascript %}-->
+      <title>发布会管理</title>
+  </head>
+
+  <body role="document">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/event_manage/">发布会管理系统</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/event_manage/">发布会</a></li>
+            <li class="active"><a href="#">嘉宾</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+           <li><a href="#">{{user}}</a></li>
+           <li><a href="/logout_action/">退出</a></li>
+         </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+      <!--搜索功能-->
+      <div class="page-header">
+        <div id="navbar" class="navbar-collapse collapse">
+            <br />
+          <form class="navbar-form" method="get" action="/search_phone/">
+            <div class="form-group">
+              <input name="phone" type="text" placeholder="手机号" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">搜索</button>
+          </form>
+        </div>
+      </div>
+
+      <!--列表显示 -->
+      <div class="row">
+        <div class="col-md-6"  style="width: 100%">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>名称</th>
+                <th>手机</th>
+                <th>Email</th>
+                <th>签到</th>
+                <th>发布会id</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for guest in guests %}
+                <tr>
+                  <td>{{ guest.id }}</td>
+                  <td>{{ guest.realname }}</td>
+                  <td>{{ guest.phone }}</td>
+                  <td>{{ guest.email }}</td>
+                  <td>{{ guest.sign }}</td>
+                  <td>{{ guest.event_id }}</td>
+                </tr>
+             {% endfor %}
+            <font color="red">{{ hint }}</font><br>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      <!-- 列表分页器 -->
+      <div class="pagination">
+          <span class="step-links">
+            {% if guests.has_previous %}
+              <a href="?phone={{ phone }}&page={{ guests.previous_page_number }}">上一页</a>
+            {% endif %}
+              <span class="current">
+                Page {{ guests.number }} of {{ guests.paginator.num_pages }}.
+              </span>
+            {% if guests.has_next %}
+              {% if phone %}
+                <a href="?phone={{ phone }}&page={{ guests.next_page_number }}">下一页</a>
+              {% else %}
+               <a href="?page={{ guests.next_page_number }}">下一页</a>
+              {% endif %}
+            {% endif %}
+          </span>
+        </div>
+    </div>
+  </body>
+</html>
+{% endblock %}
