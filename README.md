@@ -1,4 +1,4 @@
-# kpc
+# 自动化框架
 apitest_datadriver  
 -- 接口自动化 数据驱动  
 unittest_db_interface_kpc  --接口自动化 使用db  
